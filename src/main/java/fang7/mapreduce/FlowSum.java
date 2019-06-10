@@ -10,9 +10,9 @@ import java.io.IOException;
  * @author fang7
  */
 public class FlowSum implements Writable {
-    private int upFlow;
-    private int downFlow;
-    private int sumFlow;
+     int upFlow;
+     int downFlow;
+     int sumFlow;
 
     public FlowSum() {
     }
