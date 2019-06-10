@@ -21,6 +21,7 @@ public class Main {
         job.setReducerClass(SumReduce.class);
         job.setJarByClass(fang7.mapreduce.Main.class);
 
+
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowSum.class);
 
