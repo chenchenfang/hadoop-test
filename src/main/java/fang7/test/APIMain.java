@@ -22,7 +22,7 @@ public class APIMain {
     @Test
     public void testCopyFileToHDFS() throws URISyntaxException, IOException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
-        fileSystem.copyFromLocalFile(new Path("D:\\chenchen.txt"),new Path("/user/hadoop/"));
+        fileSystem.copyFromLocalFile(new Path("D:\\停机保号.txt"),new Path("/user/hadoop/停机保号.txt"));
         fileSystem.close();
         System.out.println("执行成功");
     }
