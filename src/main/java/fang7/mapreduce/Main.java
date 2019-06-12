@@ -1,5 +1,6 @@
 package fang7.mapreduce;
 
+import fang7.mypartitioner.MyPartitioner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -25,6 +26,10 @@ public class Main {
 
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(FlowSum.class);
+
+        //添加分区
+        job.setPartitionerClass(MyPartitioner.class);
+        job.setNumReduceTasks(2);
 
         FileInputFormat.setInputPaths(job,new Path("D:\\hadoopInput"));
         FileOutputFormat.setOutputPath(job,new Path("D:\\hadoopOutput"));
