@@ -12,6 +12,7 @@ object CountWord {
 
     val words = lines.flatMap(_.split(" "))
 
+
     val k2v = words.map((_,1))
 
     val result = k2v.reduceByKey(_ + _)
