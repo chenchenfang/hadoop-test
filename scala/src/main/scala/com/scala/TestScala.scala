@@ -16,10 +16,17 @@ object TestScala {
 
     unit.foreach(println)*/
 
-      val unit = sc.parallelize(Array(1,3,4,6,7))
-    val rdd = unit.mapPartitions(x => Iterator(x.mkString("|")))
+      val myrdd = sc.parallelize(Array(1,3,4,6,7))
+    val mapResult = myrdd.map(_+100)
+    mapResult.foreach(println)
 
+    val rdd = myrdd.mapPartitions(x => Iterator(x.mkString("|")))
+    rdd.collect()
+    println("wertyuiko")
     rdd.foreach(println)
 
+    println("-------------")
+    val flatMapResult = myrdd.flatMap(x => Array(x+1,2,3))
+    flatMapResult.foreach(println)
   }
 }
