@@ -1,8 +1,8 @@
 package javaio;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import org.junit.Test;
+
+import java.io.*;
 
 public class IOTest {
     public static void main(String[] args) throws IOException {
@@ -39,4 +39,45 @@ public class IOTest {
         String s = bufferedReader.readLine();
         System.out.println("你输入的是:"+s);
     }
+
+    @Test
+    public  void test4() throws IOException {
+        byte[] bytes = {12,2,1,33,43,22};
+        FileOutputStream fileoutputS = new FileOutputStream(new File("d:\\iooutput.txt"));
+        fileoutputS.write(bytes);
+        fileoutputS.close();
+    }
+    @Test
+    public void test5() throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(new File("d:\\iooutput.txt"));
+        byte[] bytes = new byte[4];
+        while (fileInputStream.read(bytes, 0, bytes.length)!=-1){
+
+            for (byte bbb:
+                    bytes) {
+                System.out.println(bbb);
+            }
+            bytes=new byte[4];
+        }
+    }
+    @Test
+    public void test6() throws IOException {
+        FileInputStream in = new FileInputStream("D:\\75509677_p0.jpg");
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(in);
+        FileOutputStream out = new FileOutputStream("D:\\pp.jpg");
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(out);
+        byte[] bytes = new byte[1024];
+        int len=0;
+        while((len=bufferedInputStream.read(bytes))!=-1){
+            bufferedOutputStream.write(bytes,0,len);
+        }
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
+
+        out.close();
+        bufferedInputStream.close();
+        in.close();
+
+    }
+
 }
