@@ -23,8 +23,8 @@ public class Driver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
-        FileInputFormat.setInputPaths(job,new Path("D:\\hadoopTest\\wordCount\\input"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\hadoopTest\\wordCount\\output"));
+        FileInputFormat.setInputPaths(job,new Path("D:\\hadoopInput\\wordcount"));
+        FileOutputFormat.setOutputPath(job,new Path("D:\\hadoopOutput\\wordcount"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b?0:1);

@@ -22,7 +22,7 @@ public class ReduceJoinReducer extends Reducer<Text,TableBean,TableBean, NullWri
             if(flag.equalsIgnoreCase("order")){
                 TableBean newBean = new TableBean();
                 try {
-                    BeanUtils.copyProperties(tableBean,newBean);
+                    BeanUtils.copyProperties(newBean,tableBean);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {
@@ -30,8 +30,9 @@ public class ReduceJoinReducer extends Reducer<Text,TableBean,TableBean, NullWri
                 }
                 tableBeans.add(newBean);
             }else if(flag.equalsIgnoreCase("pd")){
+
                 try {
-                    BeanUtils.copyProperties(tableBean,pdBean);
+                    BeanUtils.copyProperties(pdBean,tableBean);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {

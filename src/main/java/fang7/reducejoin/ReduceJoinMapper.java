@@ -34,19 +34,27 @@ public class ReduceJoinMapper extends Mapper<LongWritable, Text,Text,TableBean> 
             //这个是处理订单
             String[] split = row.split("\t");
 
+
             tableBean.setP_id(split[0]);
             outKey=split[0];
+            text.set(outKey);
             tableBean.setOrder_id(split[1]);
+            tableBean.setPname("");
             tableBean.setAmount(Integer.valueOf(split[2]));
             tableBean.setFlag("order");
-        }else{
+        }else if(name.contains("pd")){
             String[] split = row.split("\t");
             tableBean.setP_id(split[0]);
             outKey=split[0];
+            text.set(outKey);
             tableBean.setPname(split[1]);
             tableBean.setFlag("pd");
+
+            tableBean.setP_id("");
+            tableBean.setAmount(0);
+            tableBean.setOrder_id("");
         }
-        text.set(outKey);
+
 
         context.write(text,tableBean);
     }
