@@ -37,11 +37,13 @@ public class ReduceJoinMapper extends Mapper<LongWritable, Text,Text,TableBean> 
             tableBean.setP_id(split[0]);
             outKey=split[0];
             tableBean.setOrder_id(split[1]);
+            tableBean.setPname("");
             tableBean.setAmount(Integer.valueOf(split[2]));
             tableBean.setFlag("order");
         }else{
             String[] split = row.split("\t");
             tableBean.setP_id(split[0]);
+            tableBean.setOrder_id("");
             outKey=split[0];
             tableBean.setPname(split[1]);
             tableBean.setFlag("pd");
