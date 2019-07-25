@@ -1,7 +1,5 @@
 package fang7.mapjoin;
 
-import com.sun.imageio.stream.StreamCloser;
-import javafx.scene.effect.Light;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;

@@ -1,7 +1,5 @@
 package javaio;
 
-import org.junit.Test;
-
 import java.io.*;
 
 public class IOTest {
@@ -40,14 +38,14 @@ public class IOTest {
         System.out.println("你输入的是:"+s);
     }
 
-    @Test
+
     public  void test4() throws IOException {
         byte[] bytes = {12,2,1,33,43,22};
         FileOutputStream fileoutputS = new FileOutputStream(new File("d:\\iooutput.txt"));
         fileoutputS.write(bytes);
         fileoutputS.close();
     }
-    @Test
+
     public void test5() throws IOException {
         FileInputStream fileInputStream = new FileInputStream(new File("d:\\iooutput.txt"));
         byte[] bytes = new byte[4];
@@ -60,7 +58,7 @@ public class IOTest {
             bytes=new byte[4];
         }
     }
-    @Test
+
     public void test6() throws IOException {
         FileInputStream in = new FileInputStream("D:\\75509677_p0.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(in);

@@ -7,7 +7,7 @@ import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
-import org.junit.Test;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ public class IOMain {
      * @throws IOException
      * @throws InterruptedException
      */
-    @Test
+
     public void putFileToHDFS() throws URISyntaxException, IOException, InterruptedException {
         //1获取对象
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
@@ -50,7 +50,7 @@ public class IOMain {
      * @throws URISyntaxException
      * @throws InterruptedException
      */
-    @Test
+
     public void getFileFromHDFS() throws IOException, URISyntaxException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         //获取文件的输入流

@@ -2,8 +2,6 @@ package fang7.test;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
-import org.apache.hadoop.yarn.nodelabels.FileSystemNodeLabelsStore;
-import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URI;
@@ -19,27 +17,27 @@ public class APIMain {
         fileSystem.close();
         System.out.println("执行完成");
     }
-    @Test
+    
     public void testCopyFileToHDFS() throws URISyntaxException, IOException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         fileSystem.copyFromLocalFile(new Path("D:\\停机保号.txt"),new Path("/user/hadoop/停机保号.txt"));
         fileSystem.close();
         System.out.println("执行成功");
     }
-    @Test
+    
     public void testCopyFileToLocal() throws IOException, URISyntaxException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         fileSystem.copyToLocalFile(false,new Path("/user/hadoop/chenchen.txt"),new Path("D:\\xiaohua.txt"),true);
         fileSystem.close();
         System.out.println("执行成功");
     }
-    @Test
+    
     public void testDelFile() throws URISyntaxException, IOException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         boolean delete = fileSystem.delete(new Path("/user/hadoop/chenchen.txt"), true);
         System.out.println("执行成功");
     }
-    @Test
+    
     public void testRename() throws URISyntaxException, IOException, InterruptedException{
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         fileSystem.rename(new Path("/user/hadoop/chenchen.txt"),new Path("/user/hadoop/xiaohua.txt"));
@@ -52,7 +50,7 @@ public class APIMain {
      * @throws IOException
      * @throws InterruptedException
      */
-    @Test
+    
     public void testListFiles() throws URISyntaxException, IOException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         RemoteIterator<LocatedFileStatus> listFiles = fileSystem.listFiles(new Path("/"), true);
@@ -85,7 +83,7 @@ public class APIMain {
      * @throws IOException
      * @throws InterruptedException
      */
-    @Test
+    
     public void testListStatus() throws URISyntaxException, IOException, InterruptedException {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop100:9000"), new Configuration(), "hadoop");
         FileStatus[] fileStatuses = fileSystem.listStatus(new Path("/"));
