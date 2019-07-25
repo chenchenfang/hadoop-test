@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ReduceJoinDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         // 0 根据自己电脑路径重新配置
-        args = new String[]{"D:\\hadoopInput\\reducejoin","D:\\hadoopOutput\\reducejoin"};
+        args = new String[]{"D:\\hadoopInput\\reducejoin","D:\\hadoopInput\\reducejoinOutput"};
 
 // 1 获取配置信息，或者job对象实例
         Configuration configuration = new Configuration();

@@ -30,9 +30,8 @@ public class ReduceJoinReducer extends Reducer<Text,TableBean,TableBean, NullWri
                 }
                 tableBeans.add(newBean);
             }else if(flag.equalsIgnoreCase("pd")){
-
                 try {
-                    BeanUtils.copyProperties(pdBean,tableBean);
+                    BeanUtils.copyProperties(pdBean ,tableBean);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {

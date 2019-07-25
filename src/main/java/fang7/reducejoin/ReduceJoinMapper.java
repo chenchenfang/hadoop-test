@@ -45,6 +45,7 @@ public class ReduceJoinMapper extends Mapper<LongWritable, Text,Text,TableBean> 
         }else if(name.contains("pd")){
             String[] split = row.split("\t");
             tableBean.setP_id(split[0]);
+            tableBean.setOrder_id("");
             outKey=split[0];
             text.set(outKey);
             tableBean.setPname(split[1]);
