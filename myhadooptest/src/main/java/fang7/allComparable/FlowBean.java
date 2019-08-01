@@ -49,8 +49,10 @@ public class FlowBean implements WritableComparable<FlowBean> {
     public int compareTo(FlowBean o) {
         if(this.sumFlow>o.getSumFlow()){
             return -1;
-        }else{
+        }else if(this.sumFlow<o.getSumFlow()){
             return 1;
+        }else{
+            return 0;
         }
     }
 

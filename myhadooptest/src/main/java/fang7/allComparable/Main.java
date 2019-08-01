@@ -28,11 +28,11 @@ public class Main {
         job.setMapOutputValueClass(Text.class);
 
         //添加分区
-        job.setPartitionerClass(FlowPartitioner.class);
-        job.setNumReduceTasks(2);
+        /*job.setPartitionerClass(FlowPartitioner.class);*/
+        /*job.setNumReduceTasks(2);*/
 
-        FileInputFormat.setInputPaths(job,new Path("D:\\hadoopInput"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\hadoopOutput"));
+        FileInputFormat.setInputPaths(job,new Path("D:\\hadoopInput\\flow"));
+        FileOutputFormat.setOutputPath(job,new Path("D:\\hadoopInput\\flowOutput"));
 
         //开始运行
         boolean b = job.waitForCompletion(true);
