@@ -6,11 +6,14 @@ public class ExeccuteTask {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+            }
+        });
+        ThreadPoolHelper.executeTask(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("222424");
+
             }
         });
         ThreadPoolHelper.executeTask(new Runnable() {
@@ -28,88 +31,53 @@ public class ExeccuteTask {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
         ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
         ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
-        });ThreadPoolHelper.executeTask(new Runnable() {
+        });
+        ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
-        });ThreadPoolHelper.executeTask(new Runnable() {
+        });
+        ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
-        });ThreadPoolHelper.executeTask(new Runnable() {
+        });
+        ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
-        });ThreadPoolHelper.executeTask(new Runnable() {
+        });
+        ThreadPoolHelper.executeTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });ThreadPoolHelper.executeTask(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("222424");
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
 
-
-
+        ThreadPoolHelper.shutdown();
 
 
     }
