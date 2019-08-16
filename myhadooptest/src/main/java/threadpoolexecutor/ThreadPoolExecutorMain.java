@@ -12,38 +12,44 @@ public class ThreadPoolExecutorMain {
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("demo-pool-%d").build();
 
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 5, 0, TimeUnit.SECONDS,
-                new LinkedBlockingDeque<>(5), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 5, 1000L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingDeque<>(1), namedThreadFactory, new ThreadPoolExecutor.CallerRunsPolicy());
 
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
-        threadPoolExecutor.execute(() -> System.out.println("222424"));
+        for (int i = 0; i < 10; i++) {
+            threadPoolExecutor.execute(() ->{ System.out.println("222424");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
 
+        }
 
         threadPoolExecutor.shutdown();
-while(true){
-    if(threadPoolExecutor.isTerminated()){
-        System.out.println("所有的子线程都结束了！");
-        break;
-    }
-    Thread.sleep(1000);
 
-}
+
+            System.out.println();
+
+            int queueSize = threadPoolExecutor.getQueue().size();
+            System.out.println("当前排队线程数：" + queueSize);
+
+            int activeCount = threadPoolExecutor.getActiveCount();
+            System.out.println("当前活动线程数：" + activeCount);
+
+            long completedTaskCount = threadPoolExecutor.getCompletedTaskCount();
+            System.out.println("执行完成线程数：" + completedTaskCount);
+
+            long taskCount = threadPoolExecutor.getTaskCount();
+            System.out.println("总线程数：" + taskCount);
+            /*Thread.sleep(3000);*/
+
+
+
+        /*threadPoolExecutor.shutdown();*/
+
+        /*System.out.println();
+        System.out.println(threadPoolExecutor.awaitTermination(1000, TimeUnit.MILLISECONDS));*/
 
 
     }
