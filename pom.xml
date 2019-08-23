@@ -11,6 +11,7 @@
     <modules>
         <module>scala</module>
         <module>myhadooptest</module>
+        <module>logouttest</module>
     </modules>
     <repositories>
 

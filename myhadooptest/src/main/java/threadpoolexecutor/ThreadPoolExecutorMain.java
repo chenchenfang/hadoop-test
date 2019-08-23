@@ -29,7 +29,7 @@ public class ThreadPoolExecutorMain {
         threadPoolExecutor.shutdown();
 
 
-            System.out.println();
+
 
             int queueSize = threadPoolExecutor.getQueue().size();
             System.out.println("当前排队线程数：" + queueSize);
