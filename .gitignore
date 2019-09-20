@@ -10,6 +10,6 @@ gen
 
 # Project exclude paths
 /target/
-scala/src/test/
 scala/target/
-src/test/
+logouttest/target/
+myhadooptest/target/
