@@ -1,4 +1,5 @@
-package com.scala.basis
+package com.scala.vartest
+
 /**
   * 强制类型转换
  */

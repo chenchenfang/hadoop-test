@@ -1,4 +1,4 @@
-package com.scala.basis
+package com.scala.vartest
 
 object IntDemo {
   def main(args : Array[String]) : Unit ={
