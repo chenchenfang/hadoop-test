@@ -15,6 +15,10 @@ object UnitNullNothing {
   }
 
 
+  /**
+   * 抛出异常返回nothing
+   * @return
+   */
   def returnNothing():Nothing={
     throw new Exception("我来抛异常了 ")
   }
