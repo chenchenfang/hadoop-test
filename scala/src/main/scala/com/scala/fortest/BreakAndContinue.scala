@@ -8,7 +8,7 @@ import util.control.Breaks._
 object BreakAndContinue {
 
   def main(args:Array[String]):Unit={
-    printNum()
+    pay()
 
   }
 
@@ -41,5 +41,22 @@ object BreakAndContinue {
 
       }
     }
+  }
+
+  def pay() : Unit={
+    breakable{
+      var money :Double=100000
+      var count=0
+      while(money>0){
+        if(money>50000){
+          money=money-money*0.05
+        }else if(money<=50000){
+          money=money-1000
+        }
+        count+=1
+      }
+    println(s"一共可以过$count 次路口")
+    }
+
   }
 }
