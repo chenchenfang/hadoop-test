@@ -5,26 +5,27 @@ package com.scala.deftest
  */
 object RecursiveTest {
 
-  def main (args:Array[String]):Unit={
-    var i:Int = eat(10)
+  def main(args: Array[String]): Unit = {
+    var i: Int = eat(10)
     println(i)
 
-    for (jj <- 1 to 9){
-      i=i/2-1
+    for (jj <- 1 to 9) {
+      i = i / 2 - 1
     }
     println(i)
   }
-  def test (n: Int) {
+
+  def test(n: Int) {
     if (n > 2) {
-      test (n - 1)
+      test(n - 1)
     }
     println("n=" + n) //
   }
 
-  def test2 (n: Int) {
+  def test2(n: Int) {
     if (n > 2) {
-      test2 (n - 1)
-    }else {
+      test2(n - 1)
+    } else {
       println("n=" + n)
     }
   }
@@ -33,11 +34,11 @@ object RecursiveTest {
    * f(1)=3;
    * f(n) = 2*f(n-1)+1;
    */
-  def sum(n:Int ): Int ={
-    if(n==1){
+  def sum(n: Int): Int = {
+    if (n == 1) {
       return 3
-    }else {
-      return 2  *  sum(n-1) +1
+    } else {
+      return 2 * sum(n - 1) + 1
     }
   }
 
@@ -48,12 +49,12 @@ object RecursiveTest {
    * 问题：最初共多少个桃子？
    * 第n天还剩下1个桃子
    */
-  def eat(n:Int): Int ={
-    if(n==1){
+  def eat(n: Int): Int = {
+    if (n == 1) {
       return 1;
-    }else{
-      return (eat(n-1)+1)*2
+    } else {
+      return (eat(n - 1) + 1) * 2
     }
-
   }
+
 }
