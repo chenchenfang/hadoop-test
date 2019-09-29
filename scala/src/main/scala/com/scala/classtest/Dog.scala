@@ -6,8 +6,8 @@ object Dog {
   def main(args: Array[String]): Unit = {
     val dog = new Dog("wowoow", 12)
     dog.name = "fff"
-
     dog.setDead("wowow")
+
 
     println(s"dog.name=${dog.name}")
 
