@@ -6,7 +6,9 @@ object ThrowTest {
     /*val unit = test()
     println(unit.toString)*/
 
-   /* try {
+
+    throwsTest()
+    /*try {
       throwsTest()
     } catch {
       case ex : Exception => println("报错")
