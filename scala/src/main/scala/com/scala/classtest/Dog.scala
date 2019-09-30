@@ -24,7 +24,7 @@ object Dog {
 class Dog() {
 
   var name: String = "gougou"
-  var age: Int = 33
+  var age: Int = _
 
   @BeanProperty var dead: String = "dead"
 
