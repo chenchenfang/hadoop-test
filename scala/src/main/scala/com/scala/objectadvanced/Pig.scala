@@ -5,7 +5,7 @@ package com.scala.objectadvanced
  */
 object Pig {
 
-  def apply(name:String,age:Int): Pig = new Pig(name,10)
+  def apply(name:String,age:Int): Pig = new Pig(name,age)
 
   def main(args: Array[String]): Unit = {
     val pig = Pig("佩奇",10)

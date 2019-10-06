@@ -23,6 +23,6 @@ trait MyException {
 }
 
 //继承了 exception 再继承 MyException
-class Log extends Exception with MyException {
+class Log extends Exception  with MyException  {
 
 }
