@@ -13,6 +13,6 @@ public class IteratorTest {
         objects.add(1);
         objects.add(1);
 
-        objects.iterator().forEachRemaining(System.out::println);
+        objects.iterator().forEachRemaining(x -> System.out.println(x));
     }
 }
