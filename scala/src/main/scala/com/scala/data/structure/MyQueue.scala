@@ -19,6 +19,11 @@ object MyQueue {
     ints +=100
     println(ints)
 
+    println(ints.head)
+
+    println(ints.last)
+    //获取除去第一个
+    println(ints.tail)
 
   }
 }
