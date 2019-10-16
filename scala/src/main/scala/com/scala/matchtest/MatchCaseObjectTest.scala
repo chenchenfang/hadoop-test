@@ -38,7 +38,10 @@ object MatchCaseObjectTest {
   }
 }
 
-abstract class Amount{}
+/**
+ * sealed 使得子类不能再别处定义  只能在当前的源文件中
+ */
+abstract sealed class Amount{}
 
 case class Dollar(value:Double) extends Amount{}
 
