@@ -2,7 +2,7 @@ package com.scala
 
 object AdvancedDef {
   def main(args: Array[String]): Unit = {
-    advancedDefReturnDef()
+    abstractControl()
   }
 
   /**
@@ -73,7 +73,7 @@ object AdvancedDef {
   }
 
   def advancedDefReturnDef(): Unit ={
-    def test(x:Double) ={
+    def test(x:Double):Double =>Double ={
       (y:Double) => y+x
     }
 
@@ -81,5 +81,72 @@ object AdvancedDef {
     println(d)
   }
 
+  def advanceDefParagem(): Unit ={
+    val ints = List(1,2,3)
+    println(ints.map(_+1))
+    println(ints.reduce(_+_))
+  }
 
+  def advanceDefMakeSuffix(): Unit ={
+    def makeSuffix(suffix:String) ={
+      (fileName:String) => fileName.endsWith(suffix)
+    }
+    val stringToBoolean = makeSuffix("jpg")
+    println(stringToBoolean("fileName.jpg"))
+  }
+
+  /**
+   * 函数柯里化
+   * 一个函数可以传入多个参数 现在把他们拆成多个函数 每个函数传入一个参数
+   *
+   */
+  def advanceDefTestEq(): Unit ={
+    //这个是闭包
+    def mulCurry(x:Int) ={
+      (y:Int) => (x+1)*y
+    }
+    val intToInt = mulCurry(4)
+    val i = intToInt(100)
+    println(i)
+
+
+
+    implicit class TestString(str1: String){
+      def checkString(str2: String)(equalFunction: (String,Int)=>Boolean): Boolean ={
+        equalFunction(str1.toString,str2.toInt)
+      }
+    }
+
+    val functionToUnit = "200".checkString("200")(_.contains("200")&&_.toString.contains("200"))
+    println(functionToUnit)
+  }
+
+  /**
+   * 抽象控制
+   * 参数是一个函数
+   * 函数没有参数与返回值
+   * 比如 breakable
+   */
+  def abstractControl(): Unit ={
+    /**
+     * 传入一个函数 然后开一个线程去跑
+     * mainDef: ()=>Unit  参数也可以这么写 但是不是缩写
+     * @param mainDef
+     */
+    def runThread(mainDef: =>Unit): Unit ={
+      new Thread(){
+        override def run(): Unit = {
+          mainDef
+        }
+      }.start()
+    }
+
+    //直接在里边填写函数
+    //当缩写后,就不需要有 () =>
+    runThread{
+      println("wowowo")
+        println("woyoulaila")
+    }
+
+  }
 }
