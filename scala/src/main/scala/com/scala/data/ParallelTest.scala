@@ -1,5 +1,5 @@
 package com.scala.data
-
+import scala.collection.parallel.CollectionConverters._
 /**
  * 异步计算
  */
