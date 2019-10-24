@@ -1,7 +1,7 @@
 package com.scala.actor.sparkactors
 
 import akka.actor.{Actor, ActorSystem, Props}
-import com.scala.actor.sparkactors.common.{RegisterWorkInfo, RegisteredWorkerInfo, WorkInfo}
+import com.scala.actor.sparkactors.common.{HeartBeat, RegisterWorkInfo, RegisteredWorkerInfo, WorkInfo}
 import com.typesafe.config.ConfigFactory
 
 import scala.collection.mutable
@@ -30,5 +30,12 @@ class SparkMaster extends Actor {
         map.put(id, WorkInfo(id, cpu, ram))
       }
       sender() ! RegisteredWorkerInfo()
+    case HeartBeat(id) => {
+      val workInfo = map(id)
+      workInfo.lastHeartBeatTime=System.currentTimeMillis()
+      println(s"更新$id 的心跳")
+
+    }
   }
+
 }
