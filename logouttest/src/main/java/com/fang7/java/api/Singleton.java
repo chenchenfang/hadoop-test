@@ -5,7 +5,7 @@ package com.fang7.java.api;
  */
 public class Singleton {
     private static final Object clock=new Object();
-    private static Singleton singleton;
+    private static volatile Singleton singleton;
     public static Singleton getSingleton(){
 
         if(singleton==null){
