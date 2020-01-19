@@ -7,21 +7,21 @@ package com.scala.viewbounds
  */
 object TestViewBounds {
   def main(args: Array[String]): Unit = {
-    implicit def person2OrderedPerson(person: Person): Ordered[Person] = {
-      new Ordered[Person] {
-        override def compare(that: Person): Int = {
+    implicit def person2OrderedPerson(person: PersonNew): Ordered[PersonNew] = {
+      new Ordered[PersonNew] {
+        override def compare(that: PersonNew): Int = {
           person.age - that.age
         }
       }
     }
 
-    val geater = new CompareCommon(new Person("ziang",23),new Person("chhc",22)).geater
+    val geater = new CompareCommon(new PersonNew("ziang",23),new PersonNew("chhc",22)).geater
     println(geater)
 
   }
 }
 
-class Person(val name: String, val age: Int) {
+class PersonNew(val name: String, val age: Int) {
 
   override def toString = s"Person($name, $age)"
 }

@@ -6,13 +6,13 @@ package com.scala.viewbounds
 object ContextBounds{
   def main(args: Array[String]): Unit = {
     //使用隐式参数
-    implicit  val personComparetor: Ordering[Person] =new Ordering[Person]{
-      def compare(p1:Person,p2:Person):Int={
+    implicit  val personComparetor: Ordering[PersonNew] =new Ordering[PersonNew]{
+      def compare(p1:PersonNew, p2:PersonNew):Int={
         p1.age-p2.age
       }
     }
 
-    val unit = new CompareComm[Person](new Person("zizi",100),new Person("aa",200))
+    val unit = new CompareComm[PersonNew](new PersonNew("zizi",100),new PersonNew("aa",200))
     println(unit.geatter)
   }
 }
