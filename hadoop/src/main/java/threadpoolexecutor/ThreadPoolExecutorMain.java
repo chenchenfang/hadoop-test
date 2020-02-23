@@ -13,7 +13,7 @@ public class ThreadPoolExecutorMain {
                 .setNameFormat("demo-pool-%d").build();
 
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 5, 1000L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingDeque<>(1), namedThreadFactory, new ThreadPoolExecutor.CallerRunsPolicy());
+                new LinkedBlockingDeque<>(10), namedThreadFactory, new ThreadPoolExecutor.CallerRunsPolicy());
 
         for (int i = 0; i < 10; i++) {
             threadPoolExecutor.execute(() ->{ System.out.println("222424");

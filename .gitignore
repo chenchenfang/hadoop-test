@@ -13,3 +13,4 @@ gen
 scala/target/
 logouttest/target/
 myhadooptest/target/
+javaapi/target/
