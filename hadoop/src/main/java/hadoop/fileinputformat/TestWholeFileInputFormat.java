@@ -1,6 +1,7 @@
 package hadoop.fileinputformat;
 
-import club.chengouzi.hadoop.recordreader.WholeRecordReader;
+
+import hadoop.recordreader.WholeRecordReader;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.NullWritable;

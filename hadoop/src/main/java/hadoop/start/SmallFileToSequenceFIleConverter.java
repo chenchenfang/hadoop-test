@@ -1,7 +1,7 @@
 package hadoop.start;
 
-import club.chengouzi.hadoop.fileinputformat.TestWholeFileInputFormat;
-import club.chengouzi.hadoop.mapper.WholeFileMapper;
+import hadoop.fileinputformat.TestWholeFileInputFormat;
+import hadoop.mapper.WholeFileMapper;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
